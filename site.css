@@ -205,7 +205,7 @@ footer .links a{display:block}
   .spot img{max-width:420px}
 }
 
-/* "Check dates": filled by default, outline on hover */
+/* "Book now": filled by default, outline on hover */
 .top nav .btn[href$="#book"],.hero .btn[href$="#book"]{background:var(--cream);color:var(--walnut);border-color:var(--cream);text-shadow:none}
 .top nav .btn[href$="#book"]:hover,.hero .btn[href$="#book"]:hover{background:transparent;color:var(--cream)}
 .top.solid nav .btn[href$="#book"],.g-cta .btn[href$="#book"]{background:var(--ridge);color:var(--cream);border-color:var(--ridge)}
