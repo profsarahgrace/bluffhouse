@@ -56,7 +56,7 @@ nav a.on{border-bottom:1px solid currentColor;padding-bottom:3px}
   .hero .pre{animation:slowrise 1s ease-out .1s both}
   .hero h1{animation:slowrise 1.4s ease-out .3s both}
   .hero h1 em{animation:slowrise 1.4s ease-out .9s both}
-  .hero p,.hero .btn{animation:slowrise 1s ease-out 1.4s both}
+  .hero p,.hero .btn,.hero .hero-bar{animation:slowrise 1s ease-out 1.4s both}
 }
 .hero .btn:hover{background:var(--cream);color:var(--walnut)}
 
@@ -218,3 +218,16 @@ footer .links a{display:block}
   .sticky-book.show{opacity:1;visibility:visible;transform:translate(-50%,0)}
 }
 @media (prefers-reduced-motion:reduce){.sticky-book{transition:none}}
+
+/* Desktop: a thin date bar in the hero. Each part glides down to the booking box and opens its calendar. */
+.hero-bar{display:none}
+@media (min-width:901px){
+  .hero .wrap>.btn{display:none}
+  .hero .wrap>.hero-bar{display:inline-flex;justify-self:start;align-items:stretch;margin-top:34px;background:rgba(245,240,232,.95);color:var(--walnut);box-shadow:0 18px 40px rgba(20,16,12,.25)}
+  .hero-bar a{display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:150px;padding:13px 26px;text-decoration:none;color:inherit;border-right:1px solid var(--rule);transition:background .25s}
+  .hero-bar a:not(.go):hover{background:#fff}
+  .hero-bar .lbl{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#6b6358}
+  .hero-bar .val{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.1}
+  .hero-bar a.go{flex-direction:row;align-items:center;min-width:0;padding:0 34px;border-right:0;background:var(--ridge);color:var(--cream);font-size:12px;letter-spacing:.24em;text-transform:uppercase}
+  .hero-bar a.go:hover{background:var(--walnut)}
+}

@@ -26,7 +26,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@200;300&display=swap" rel="stylesheet">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="stylesheet" href="site.css?v=20261121-11">
+<link rel="stylesheet" href="site.css?v=20261121-12">
 </head>
 <body>
 
@@ -51,6 +51,12 @@
     <h1>The canyon<br><em>never rushes.</em></h1>
     <p>A proper house for six, above the Arkansas Grand Canyon in Jasper.</p>
     <a class="btn" href="#book">Book now</a>
+    <div class="hero-bar" role="group" aria-label="Check availability">
+      <a href="#book" data-open-calendar><span class="lbl">Check-in</span><span class="val">Add date</span></a>
+      <a href="#book" data-open-calendar><span class="lbl">Check-out</span><span class="val">Add date</span></a>
+      <a href="#book" data-open-calendar><span class="lbl">Guests</span><span class="val">Up to six</span></a>
+      <a class="go" href="#book" data-open-calendar>Book now</a>
+    </div>
   </div>
 </section>
 
@@ -227,6 +233,6 @@
 
 <script src="https://app.lodgify.com/book-now-box/stable/renderBookNowBox.js" defer></script>
 <a class="sticky-book" href="#book">Book now</a>
-<script src="site.js?v=20261121-1" defer></script>
+<script src="site.js?v=20261121-2" defer></script>
 </body>
 </html>
