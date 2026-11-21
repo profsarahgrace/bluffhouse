@@ -51,8 +51,7 @@ nav a.on{border-bottom:1px solid currentColor;padding-bottom:3px}
 .mornings{padding:clamp(80px,11vw,150px) 0}
 .mornings .grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(36px,6vw,90px);align-items:center}
 .mornings p+p{margin-top:18px}
-.mornings figure{margin-right:calc(-1 * max(32px, (100vw - var(--wrap)) / 2 + 32px))}
-.mornings figure img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.mornings .sk img{width:100%;max-width:640px;margin-left:auto;mix-blend-mode:multiply}
 
 /* Inside (dark band) */
 .inside{position:relative;overflow:hidden;background:var(--ridge);color:var(--cream);padding:clamp(80px,11vw,150px) 0}
@@ -75,9 +74,7 @@ h2.sm{font-size:clamp(34px,3.7vw,50px)}
 .land .topo{position:absolute;inset:0 0 auto 0;height:min(62vw,620px);background:url(img/topo.jpg) center/cover no-repeat;opacity:.9;-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent);mask-image:linear-gradient(to bottom,#000 55%,transparent)}
 .land .wrap{position:relative}
 .land .intro{max-width:640px}
-.land .photo{margin:clamp(48px,6vw,80px) 0}
-.land .photo img{width:100%;aspect-ratio:2/1;object-fit:cover}
-.land .photo figcaption{font-size:13px;color:#6b6358;margin-top:12px}
+.land .sk-head{margin-top:clamp(64px,8vw,110px)}
 .sk-head{font-size:30px;color:var(--ridge);margin-bottom:28px}
 .sketches{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,44px);align-items:end;margin-bottom:clamp(56px,7vw,90px)}
 .sketches img{width:100%;mix-blend-mode:multiply}
@@ -97,8 +94,11 @@ h2.sm{font-size:clamp(34px,3.7vw,50px)}
 .town-sketch{display:block;width:min(100%,340px);margin:0 0 22px;mix-blend-mode:multiply}
 .lists .town{display:grid;grid-template-columns:1fr 1fr;column-gap:28px}
 
+/* River band */
+.river-band{height:min(78vh,760px);min-height:340px;background:#3b3a33 url(img/river.jpg) center 62%/cover no-repeat}
+
 /* Questions */
-.questions{background:var(--paper);padding:clamp(80px,11vw,140px) 0;border-top:1px solid var(--rule)}
+.questions{background:var(--paper);padding:clamp(80px,11vw,140px) 0}
 .questions .grid{display:grid;grid-template-columns:4fr 8fr;gap:clamp(36px,6vw,90px)}
 .questions .side{position:sticky;top:40px;align-self:start}
 .questions .grass{width:min(230px,70%);margin-top:48px;mix-blend-mode:multiply}
@@ -109,7 +109,7 @@ h2.sm{font-size:clamp(34px,3.7vw,50px)}
 
 /* Book */
 .book{background:var(--logo-ground);padding:clamp(80px,10vw,130px) 0;text-align:center}
-.book .frog{width:min(230px,52vw);margin:0 auto 6px}
+.book .frog{width:clamp(84px,8vw,112px);margin:0 auto}
 .book h2{margin-top:30px}
 .book .rule{margin:28px auto}
 .book p{max-width:32em;margin:0 auto}
@@ -130,7 +130,6 @@ footer .meta{text-align:right;line-height:1.9}
 /* Small screens */
 @media (max-width:900px){
   .mornings .grid,.inside .grid,.lists,.questions .grid{grid-template-columns:1fr}
-  .mornings figure{margin-right:-32px;margin-left:-32px}
   .inside figure{max-width:520px}
   .questions .grass{display:none}
   .sketches{grid-template-columns:1fr 1fr}
@@ -143,7 +142,6 @@ footer .meta{text-align:right;line-height:1.9}
 @media (max-width:640px){
   body{font-size:16.5px}
   .wrap{padding:0 22px}
-  .mornings figure{margin-right:-22px;margin-left:-22px}
   nav a:not(.btn){display:none}
   .mark b{font-size:21px}
     .inside dl div{grid-template-columns:1fr;gap:4px}
@@ -153,4 +151,37 @@ footer .meta{text-align:right;line-height:1.9}
   .lists .town{column-gap:18px}
   .lists .town li{line-height:1.35}
   .q-sketch{float:none;width:62%;margin:0 0 16px}
+}
+
+/* Guide pages (hikes, river) */
+.guide-head{position:relative;padding:clamp(70px,9vw,120px) 0 clamp(40px,5vw,64px);overflow:hidden}
+.guide-head .topo{position:absolute;inset:0;background:url(img/topo.jpg) center 40%/cover no-repeat;opacity:.85;-webkit-mask-image:linear-gradient(to bottom,#000 40%,transparent);mask-image:linear-gradient(to bottom,#000 40%,transparent)}
+.guide-head .wrap{position:relative}
+.guide-head h1{font-size:clamp(46px,6vw,80px);color:var(--ridge);max-width:11em}
+.guide-head .lede{max-width:38em}
+.guide-group{padding:clamp(40px,5vw,64px) 0}
+.guide-group h2{font-size:clamp(32px,3.4vw,44px);border-top:1px solid var(--limestone);padding-top:28px}
+.guide-group .gnote{font-size:15px;color:#6b6358;margin-top:8px}
+.spot{display:grid;grid-template-columns:minmax(200px,340px) 1fr;gap:clamp(24px,4vw,64px);align-items:start;padding:clamp(28px,3.4vw,44px) 0;border-bottom:1px solid var(--rule)}
+.spot:last-child{border-bottom:0}
+.spot img{width:100%;mix-blend-mode:multiply}
+.spot h3{font-size:clamp(28px,2.6vw,34px);color:var(--ridge);font-weight:400}
+.spot .m{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--cognac);margin:6px 0 14px}
+.spot p{max-width:36em}
+.spot p+p{margin-top:12px}
+.spot a,.guide-next a,a.inline{color:var(--cognac);text-underline-offset:3px}
+.guide-next{padding:clamp(30px,4vw,56px) 0 clamp(60px,8vw,100px);text-align:center}
+.guide-next p{font-family:var(--serif);font-style:italic;font-size:clamp(22px,2.2vw,28px);color:var(--ridge)}
+.g-cta{background:var(--logo-ground);text-align:center;padding:clamp(70px,9vw,110px) 0}
+.g-cta .rule{margin:26px auto}
+.g-cta .btn{color:var(--ridge)}
+.g-cta .btn:hover{background:var(--ridge);color:var(--cream)}
+.more-link{margin:-40px 0 clamp(56px,7vw,90px)}
+.more-link .btn{color:var(--ridge)}
+.more-link .btn:hover{background:var(--ridge);color:var(--cream)}
+a.inline{white-space:nowrap}
+footer .links a{display:block}
+@media (max-width:700px){
+  .spot{grid-template-columns:1fr;gap:18px}
+  .spot img{max-width:420px}
 }
