@@ -22,6 +22,9 @@ h2 em,h1 em{font-style:italic}
 .top{position:absolute;inset:0 0 auto 0;z-index:5;color:var(--cream)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:26px;padding-bottom:26px;max-width:none}
 .mark{text-decoration:none;display:flex;flex-direction:column;align-items:center;line-height:1}
+/* The frog stands beside the wordmark, like a signature */
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
+.logo-frog{height:74px;width:auto;filter:drop-shadow(0 0 14px rgba(169,136,74,.3))}
 .top.solid .top:not(.solid) .mark{text-shadow:0 1px 10px rgba(34,27,21,.4)}
 .mark i{font-family:var(--serif);font-style:italic;font-size:17px;margin-bottom:2px}
 .mark b{font-family:var(--serif);font-weight:300;font-size:25px;letter-spacing:.2em;margin-right:-.2em}
@@ -54,30 +57,6 @@ nav a.on{border-bottom:1px solid currentColor;padding-bottom:3px}
   .hero h1{animation:slowrise 1.4s ease-out .3s both}
   .hero h1 em{animation:slowrise 1.4s ease-out .9s both}
   .hero p,.hero .btn{animation:slowrise 1s ease-out 1.4s both}
-  .hero .frog{animation:frogrise 1.6s ease-out 1.8s both,drift 9s ease-in-out 3.4s infinite}
-}
-/* The frog's spirit floats in the canyon: a little see-through, a faint brass glow, a slow drift */
-@keyframes frogrise{from{opacity:0;translate:0 14px}to{opacity:1;translate:0 0}}
-@keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-.hero .frog{display:block;filter:drop-shadow(0 0 26px rgba(169,136,74,.32))}
-/* Desktop: as tall as the headline block, feet on the "A proper house" line */
-@media (min-width:901px){
-  .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:clamp(24px,4vw,72px)}
-  .hero .wrap>*{grid-column:1}
-  .hero .wrap>.btn{justify-self:start}
-  .hero .frog-wrap{grid-column:2;grid-row:1 / 4;position:relative;width:calc((2 * min(140px,9.6vw) + 140px) * .76 * .85)}
-  .hero .frog{position:absolute;right:0;bottom:calc(-1 * clamp(24px,2.8vw,44px));width:100%;height:85%;object-fit:contain;object-position:right bottom}
-}
-/* Phones and tablets: bottom right, feet level with the bottom of "Check dates", rising behind the
-   end of the subline. The frog takes no space of its own, so it never pushes the text around. */
-@media (max-width:900px){
-  .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr)}
-  .hero .pre{grid-row:1;grid-column:1;position:relative;z-index:1}
-  .hero h1{grid-row:2;grid-column:1;position:relative;z-index:1}
-  .hero .wrap>p:not(.pre){grid-row:3;grid-column:1;position:relative;z-index:1}
-  .hero .wrap>.btn{grid-row:4;grid-column:1;justify-self:start;position:relative;z-index:1}
-  .hero .frog-wrap{--fh:clamp(136px,36vw,205px);grid-row:3 / 5;grid-column:1;justify-self:end;align-self:end;position:relative;width:0;height:0;z-index:0}
-  .hero .frog{position:absolute;right:0;bottom:-50px;height:var(--fh);width:auto;max-width:none}
 }
 .hero .btn:hover{background:var(--cream);color:var(--walnut)}
 
@@ -179,6 +158,8 @@ footer .meta{text-align:right;line-height:1.9}
   footer .meta{text-align:left}
 }
 @media (max-width:640px){
+  .logo-frog{height:60px}
+  .brand{gap:10px}
   body{font-size:16.5px}
   .wrap{padding:0 22px}
   nav a:not(.btn){display:none}
