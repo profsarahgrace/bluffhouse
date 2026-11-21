@@ -60,7 +60,7 @@ nav a.on{border-bottom:1px solid currentColor;padding-bottom:3px}
 .mornings{padding:clamp(80px,11vw,150px) 0}
 .mornings .grid{display:grid;grid-template-columns:5fr 7fr;gap:clamp(36px,6vw,90px);align-items:center}
 .mornings p+p{margin-top:18px}
-.mornings .sk img{width:100%;max-width:640px;margin-left:auto;mix-blend-mode:multiply}
+.mornings .sk img{width:100%;max-width:440px;margin-left:auto;mix-blend-mode:multiply}
 
 /* Inside (dark band) */
 .inside{position:relative;overflow:hidden;background:var(--ridge);color:var(--cream);padding:clamp(80px,11vw,150px) 0}
@@ -142,6 +142,8 @@ footer .meta{text-align:right;line-height:1.9}
 /* Small screens */
 @media (max-width:900px){
   .mornings .grid,.inside .grid,.lists,.questions .grid{grid-template-columns:1fr}
+  .mornings{padding:64px 0}
+  .mornings .sk img{max-width:70%;margin:8px auto 0}
   .inside figure{max-width:520px}
   .questions .grass{display:none}
   .sketches{grid-template-columns:1fr 1fr}
