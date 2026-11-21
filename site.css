@@ -85,8 +85,11 @@ h2.sm{font-size:clamp(34px,3.7vw,50px)}
 .land .intro{max-width:640px}
 .land .sk-head{margin-top:clamp(64px,8vw,110px)}
 .sk-head{font-size:30px;color:var(--ridge);margin-bottom:28px}
-.sketches{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,44px);align-items:end;margin-bottom:clamp(56px,7vw,90px)}
+.sketches{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,44px);row-gap:clamp(36px,4.5vw,64px);align-items:end;margin-bottom:clamp(56px,7vw,90px)}
 .sketches img{width:100%;mix-blend-mode:multiply}
+.sketches figure{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:0}
+.sketches figure img{align-self:end}
+.sketches figcaption{align-self:start}
 .sketches figcaption{margin-top:14px;border-top:1px solid var(--rule);padding-top:10px}
 .sketches figcaption b{display:block;font-family:var(--serif);font-weight:400;font-style:italic;font-size:21px;color:var(--ridge);line-height:1.2}
 .sketches figcaption span{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--cognac)}
